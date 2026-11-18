@@ -123,6 +123,8 @@ En otra terminal, configura el usuario de prueba. `LOGIN_PASSWORD` debe tener el
 $env:LOGIN_EMAIL = "admin@modalab.test"
 $env:LOGIN_PASSWORD = "reemplaza por la contraseña de prueba del administrador"
 npm run test:load
+si falla npm usar el siguiente comando
+& "C:\Program Files\k6\k6.exe" run tests/load/login-concurrency.k6.js
 ```
 
 La prueba envía 50 solicitudes al endpoint local `http://127.0.0.1:3000/api/auth/login`. Solo acepta destinos `localhost` o `127.0.0.1`; no la ejecutes contra producción ni contra sistemas de terceros.
