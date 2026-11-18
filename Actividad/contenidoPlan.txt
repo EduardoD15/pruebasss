@@ -1,0 +1,64 @@
+Estructura Actualizada del Plan de Pruebas (Basada en ISO/IEC/IEEE 29119-3)
+1. Información Específica del Documento
+
+1.1 Identificador único del documento.
+
+1.2 Organización emisora y autores.
+
+1.3 Autoridad de aprobación.
+
+1.4 Historial de cambios y control de versiones.
+
+2. Introducción y Declaración de Adaptación (Tailoring)
+
+2.1 Alcance del documento.
+
+2.2 Referencias documentales.
+
+2.3 Conformidad y Adaptación (Tailoring): Esta sección es de carácter obligatorio. Se debe declarar explícitamente si el proyecto cumple con la norma de forma íntegra o si se está aplicando un proceso de adaptación. Si se adapta, se debe justificar qué procesos normativos se excluyen basándose en el nivel de criticidad del software y las restricciones del proyecto (ej. alcance de 3 semanas), documentando el riesgo que se asume al omitir dichos procesos.
+
+2.4 Glosario.
+
+3. Contexto de las Pruebas
+
+3.1 Elementos de prueba (Test items).
+
+3.2 Alcance y exclusiones de las pruebas.
+
+3.3 Suposiciones y restricciones.
+
+3.4 Partes interesadas.
+
+4. Gestión de Riesgos y Matriz de Exposición (RBT - Risk-Based Testing)
+
+4.1 Identificación de Riesgos: Listado exhaustivo de los riesgos del producto (fallos en la funcionalidad, seguridad, rendimiento) y riesgos del proyecto (limitaciones de tiempo, entorno).
+
+4.2 Matriz de Análisis de Riesgos: Aplicación de una matriz que cruce la Probabilidad de Ocurrencia contra el Impacto (severidad del fallo). Cada riesgo identificado debe recibir una calificación de Exposición al Riesgo (ej. Crítico, Alto, Medio, Bajo).
+
+4.3 Tratamiento y Mitigación: Declaración formal de cómo se tratará cada riesgo. Los riesgos con exposición Crítica y Alta deben ser obligatoriamente mitigados a través de pruebas, mientras que los de exposición Baja pueden ser aceptados sin pruebas para optimizar el esfuerzo.
+
+5. Estrategia de Pruebas y Derivación de Casos (Test Design Process)
+
+5.1 Derivación de Condiciones de Prueba: Traducción directa de los riesgos a mitigar (identificados en la sección 4.3) en condiciones de prueba evaluables.
+
+5.2 Técnicas de Diseño de Pruebas: Especificación de las técnicas formales estandarizadas (ej. Partición de Clases de Equivalencia, Análisis de Valores Límite, Transición de Estados) que se aplicarán a las condiciones de prueba para generar los casos de prueba concretos.
+
+5.3 Generación de Casos de Prueba y Trazabilidad: Documentación de la matriz de trazabilidad que demuestre que cada Caso de Prueba generado responde a una Condición de Prueba, la cual a su vez mitiga un Riesgo previamente evaluado en la Matriz.
+
+5.4 Requisitos de entorno y datos de prueba.
+
+5.5 Criterios de suspensión y finalización.
+
+6. Actividades de Prueba y Estimaciones
+
+6.1 Desglose de tareas.
+
+6.2 Estimación de esfuerzo por actividad.
+
+7. Personal
+
+7.1 Roles y responsabilidades de prueba.
+
+8. Cronograma
+
+8.1 Hitos y fechas de ejecución (Alineado al ciclo de 3 semanas).
