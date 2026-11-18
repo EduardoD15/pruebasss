@@ -1,0 +1,32 @@
+{
+  "name": "proyecto-modalab",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node .next/standalone/server.js",
+    "lint": "eslint",
+    "test:unit": "tsx --test tests/unit/auth-policy.test.ts",
+    "test:integration": "tsx --test tests/integration/auth-service.test.ts",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:e2e": "playwright test",
+    "test:e2e:prepare": "tsx scripts/prepare-e2e.ts"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "tsx": "^4.20.6",
+    "typescript": "^5"
+  }
+}
