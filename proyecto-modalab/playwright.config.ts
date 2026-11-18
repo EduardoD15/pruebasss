@@ -6,6 +6,7 @@ const sellerPassword = process.env.MODALAB_SELLER_PASSWORD ?? "Demo-Seller-2026!
 
 export default defineConfig({
   testDir: "./tests/e2e",
+  outputDir: process.env.PLAYWRIGHT_OUTPUT_DIR ?? "test-results",
   fullyParallel: false,
   workers: 1,
   reporter: "list",
@@ -28,7 +29,8 @@ export default defineConfig({
       APP_ENV: "demo",
       MODALAB_ADMIN_PASSWORD: adminPassword,
       MODALAB_SELLER_PASSWORD: sellerPassword,
-      MODALAB_DB_PATH: join(process.cwd(), "data", "modalab-e2e.sqlite"),
+      MODALAB_DB_PATH:
+        process.env.MODALAB_DB_PATH ?? join(process.cwd(), "data", "modalab-e2e.sqlite"),
     },
   },
 });

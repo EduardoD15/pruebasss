@@ -3,12 +3,12 @@
 **Proyecto:** Aplicativo administrativo de una tienda de ropa  
 **Módulo evaluado:** Inicio de sesión, autenticación y control de acceso  
 **Norma de referencia:** ISO/IEC/IEEE 29119-3:2013  
-**Versión del documento:** 1.0  
+**Versión del documento:** 1.1
 **Fecha:** 18 de noviembre de 2026  
 **Autores identificados en los antecedentes:** Eduardo Deossa, Estefanía Montoya y Santiago Castaño  
 **Estado de aprobación:** Borrador académico pendiente de revisión del equipo y aprobación docente
 
-> **Alcance de este entregable.** Este documento consolida y completa el plan de pruebas solicitado en `../Actividad/contenidoPlan.txt`, usando como contexto los talleres previos del equipo en `../ContextoTrabajosEchoAntes/trabajo.md`. El proyecto de software que acompaña el informe es un prototipo académico ejecutable para validar ese plan; no es una implementación completa de la tienda ni un sistema listo para producción.
+> **Alcance de este entregable.** Este documento consolida y completa el plan de pruebas solicitado en `../Actividad/contenidoPlan.txt`, usando como contexto los trabajos y talleres previos del equipo. Modalab es un proyecto propio de inicio de sesión elaborado previamente por el equipo y usado como sistema bajo prueba; no es una implementación completa de la tienda ni un sistema listo para producción. El periodo de trabajo reportado para este proyecto fue del 9 al 17 de noviembre de 2026.
 
 ## 1. Información específica del documento
 
@@ -22,12 +22,11 @@ Trabajo académico del equipo de Modalab, desarrollado para la asignatura de Ing
 
 | Integrante | Responsabilidad propuesta |
 |---|---|
-| Eduardo Deossa | Coordinación del plan, trazabilidad y revisión |
-| Estefanía Montoya | Análisis de condiciones y diseño de pruebas manuales |
-| Santiago Castaño | Automatización, entorno y registro de resultados |
-| Integrante 4 | **Por confirmar por el equipo**; los documentos previos lo dejan como “No aplica”, pero la guía final solicita un equipo de cuatro |
+| Eduardo Deossa | Aplicación de inicio de sesión y configuración básica del proyecto |
+| Estefanía Montoya | Alcance, riesgos, casos manuales y documentos del plan |
+| Santiago Castaño | Pruebas automatizadas, ejecución y guía de comandos |
 
-La asignación del cuarto integrante y el reparto definitivo de los 23 casos están pendientes. No se inventa una identidad ni se considera confirmada la capacidad de cuatro personas hasta que el equipo complete ese dato.
+El equipo está compuesto por estos tres integrantes. La distribución se usará para organizar los aportes en una copia nueva del proyecto.
 
 ### 1.3 Autoridad de aprobación
 
@@ -37,8 +36,11 @@ La aprobación final corresponde al docente y al equipo del proyecto. Sus nombre
 
 | Versión | Fecha | Cambio | Autoría |
 |---|---|---|---|
-| 0.1 | 24/03/2026 | Insumos iniciales de alcance, riesgos y estrategia en los talleres del equipo | Equipo Modalab |
-| 1.0 | 18/11/2026 | Consolidación del plan, matriz de riesgos, trazabilidad, criterios, estimaciones y entregables ejecutables | Equipo Modalab |
+| 0.1 | 09/11/2026 | Inicio del periodo del proyecto propio de inicio de sesión y revisión del prototipo existente del equipo | Equipo Modalab |
+| 1.0 | 17/11/2026 | Cierre del periodo de trabajo; consolidación de alcance, riesgos, casos, ejecución y estimaciones | Equipo Modalab |
+| 1.1 | 18/11/2026 | Actualización de autores, cronograma, estado de A06 y propuesta para separar aportes en una copia nueva del proyecto | Equipo Modalab |
+
+**Registro del repositorio actual:** el commit `2f3b054` (`Incluir proyecto Modalab en el repositorio`, 18/11/2026) fue creado por Eduardo Deossa e incluye la aplicación y las pruebas. La separación descrita en este informe corresponde a una copia nueva del proyecto que crearán los integrantes; todavía no es parte del historial de GitHub. La guía incluye los archivos por aporte y los mensajes sugeridos. Los hashes se anotarán después de crear los commits.
 
 ## 2. Introducción y declaración de adaptación
 
@@ -50,24 +52,26 @@ Este plan define cómo verificar el módulo administrativo del sistema Modalab. 
 - **F02 — Autenticación:** validación de credenciales, estado de cuenta, manejo de intentos fallidos y sesión.
 - **F03 — Control de acceso:** autorización de funciones según el rol Administrador o Vendedor.
 
-El sistema de muestra incluido implementa únicamente estos flujos con cuentas y datos sintéticos. No se evalúan inventario, productos, ventas, créditos, entregas, reportes ni una integración real con producción.
+El proyecto propio de inicio de sesión, elaborado previamente por el equipo, implementa únicamente estos flujos con cuentas y datos sintéticos. Se usa como base para verificar el plan. No se evalúan inventario, productos, ventas, créditos, entregas, reportes ni una integración real con producción.
 
 ### 2.2 Referencias
 
 1. `../Actividad/contenidoPlan.txt` — estructura requerida para el informe.
 2. `../Actividad/Plan_de_Pruebas_de_Software_ISO_29119-3.pdf` — guía de la actividad final.
-3. `../ContextoTrabajosEchoAntes/trabajo.md` — alcance, talleres, riesgos y casos de prueba ya trabajados por el equipo.
-4. Material de clase sobre fundamentos, diseño y documentación de pruebas.
-5. ISO/IEC/IEEE 29119-3:2013, *Software and systems engineering — Software testing — Part 3: Test documentation*.
-6. ISO/IEC/IEEE 29119-4, como referencia para técnicas de diseño de pruebas.
+3. `../ContextoTrabajosEchoAntes/trabajo.md` — trabajos previos del equipo: alcance, talleres, riesgos y casos de prueba elaborados a medida de la clase.
+4. `../proyecto-modalab/README.md` — proyecto propio de inicio de sesión elaborado previamente por el equipo y usado como sistema bajo prueba.
+5. Material de clase sobre fundamentos, diseño y documentación de pruebas.
+6. ISO/IEC/IEEE 29119-3:2013, *Software and systems engineering — Software testing — Part 3: Test documentation*.
+7. ISO/IEC/IEEE 29119-4, como referencia para técnicas de diseño de pruebas.
+8. `Guia_Colaboracion_Git.md` — archivos y pasos para organizar los aportes en una copia nueva del proyecto.
 
 ### 2.3 Conformidad y adaptación (*tailoring*)
 
 Este trabajo **no declara conformidad íntegra ni certificación** frente a ISO/IEC/IEEE 29119. Se adopta una adaptación académica de la estructura de documentación y de los conceptos de gestión basada en riesgos y trazabilidad, proporcional al alcance del módulo y al tiempo disponible.
 
-Se limita el trabajo a un plan propio para Modalab (no una plantilla prefabricada), una matriz de riesgos, condiciones y 23 casos de prueba, procedimientos, datos/entorno, criterios de salida y estimaciones. Se excluyen auditoría formal, independencia organizacional de QA, cobertura completa de procesos del ciclo de vida, certificación, pruebas de penetración, pruebas de producción y análisis estadístico operacional. Estas exclusiones reducen costo y complejidad, pero dejan riesgo residual: los resultados solo describen el prototipo y los escenarios ejecutados; no demuestran ausencia de defectos ni seguridad de un despliegue real.
+Se limita el trabajo a un plan para Modalab, una matriz de riesgos, condiciones y 23 casos de prueba, procedimientos, datos/entorno, criterios de salida y estimaciones. El repositorio actual está en GitHub y su rama `main` estaba sincronizada con `origin/main` al revisarla el 18/11/2026. La separación de aportes se hará en otra copia del proyecto y no modifica ese historial. El release de GitHub sigue pendiente. Se excluyen auditoría formal, independencia organizacional de QA, certificación, pruebas de producción y análisis estadístico operacional.
 
-Las pruebas de concurrencia se autorizan únicamente contra el entorno local aislado y con datos sintéticos. No se ejecutarán cargas contra servicios externos, producción o sistemas de terceros. El prototipo usa un costo de scrypt reducido para cumplir la meta académica medida en cuatro núcleos; no es una configuración recomendada para producción y debe sustituirse antes de cualquier despliegue real. La guía solicita control de versiones en GitHub y un release vinculado; este entregable queda en el repositorio Git local del proyecto, sin remoto ni release publicados. Vincular el repositorio remoto y el release requiere que el equipo indique el destino y autorice su publicación.
+Las pruebas de concurrencia se ejecutan contra el entorno local y con datos sintéticos. El costo de scrypt del prototipo está configurado para la medición académica y no debe usarse como referencia para producción. El commit actual incluye la aplicación y las pruebas en un solo cambio. Los commits separados se crearán en un repositorio nuevo, según la guía de colaboración.
 
 ### 2.4 Glosario
 
@@ -107,7 +111,7 @@ Las pruebas de concurrencia se autorizan únicamente contra el entorno local ais
 - Se cuenta con una versión del prototipo y un entorno local controlado con Node.js 22, Next.js, SQLite y navegador Chromium.
 - Las identidades, roles y contraseñas de ensayo son ficticios; no se usan datos personales ni credenciales reales.
 - Los roles del alcance son Administrador y Vendedor. La matriz final de permisos de negocio debe ser confirmada por el equipo.
-- La guía final solicita cuatro integrantes; los trabajos previos solo identifican a tres y dejan un cuarto como “No aplica”. Debe confirmarse antes de atribuir cargas y responsabilidades finales.
+- El equipo reportado para este proyecto está compuesto por Eduardo Deossa, Estefanía Montoya y Santiago Castaño; la distribución de responsabilidades se detalla en 1.2 y 7.
 - Regla de bloqueo adoptada del taller: el tercer intento fallido consecutivo bloquea temporalmente la cuenta; los intentos primero y segundo no la bloquean. La duración exacta del bloqueo es una configuración del prototipo y debe confirmarse antes de fijar la prueba temporal.
 - Los resultados de rendimiento dependen del equipo, sistema operativo y carga concurrente; deben registrarse junto con la medición y no generalizarse a producción.
 - Las estimaciones son esfuerzo-persona, no duración calendario garantizada.
@@ -136,7 +140,7 @@ Probabilidad (P) e impacto (I) se califican de 1 a 3. La exposición se calcula 
 | RP-02 | Producto | Fallos en los flujos principales de ingreso, sesión o salida | 2 | 3 | 6 / Medio | CP-02/03/06; M07–M12 y A02–A04 | Casos no contemplados y cambios posteriores |
 | RP-03 | Producto | Una cuenta sin autorización obtiene acceso a funciones de otro rol | 2 | 3 | 6 / Medio | CP-05; M13–M14 y A05, UI y API | Errores de configuración o amenazas no simuladas |
 | RP-04 | Producto | Entradas inválidas o sesiones expiradas generan errores no controlados | 3 | 2 | 6 / Medio | CP-01/06; M03–M07, M15–M16 y A01/A04 | Combinaciones de entrada no incluidas |
-| RY-01 | Proyecto | El entorno de prueba difiere del entorno objetivo | 3 | 3 | 9 / Alto | CP-07 / M01, preparación reproducible Docker y comprobación de datos/versiones | Diferencias con infraestructura productiva inexistente en el prototipo |
+| RY-01 | Proyecto | El entorno de prueba difiere del entorno objetivo | 3 | 3 | 9 / Alto | CP-07 / M01, preparación local reproducible con Node.js/npm y comprobación de datos/versiones | Diferencias con infraestructura productiva inexistente en el prototipo |
 | RY-02 | Proyecto | Retrasos de desarrollo reducen cobertura y tiempo de retest | 3 | 3 | 9 / Alto | CP-08 / M02, hitos de entrada/salida, dependencias WBS y priorización | Retraso extremo puede limitar alcance |
 | RY-03 | Proyecto | Conocimiento técnico desigual retrasa diseño o ejecución | 2 | 2 | 4 / Bajo | CP-09 / M17, glosario, instrucciones y checklist | Curva de aprendizaje y errores humanos |
 | RY-04 | Proyecto | Cambios no controlados amplían el alcance y obligan a rediseñar pruebas | 3 | 2 | 6 / Medio | CP-08 / M02, control de versión y actualización de trazabilidad | Cambios tardíos o no comunicados |
@@ -172,7 +176,7 @@ RP-01, RY-01 y RY-02 se tratan como prioritarios y tienen cobertura explícita: 
 
 ### 5.3 Casos de prueba y trazabilidad bidireccional
 
-La guía final exige **20–24 casos por equipo**, con **15–18 manuales y 5–6 automatizados**. Se diseñan **23 casos: 17 manuales (M01–M17) y 6 automatizados (A01–A06)**, equivalentes a 5–6 por integrante si se confirma el cuarto integrante. El catálogo con datos, precondiciones, pasos, resultados y fundamento matemático está en `../proyecto-modalab/tests/manual/casos-de-prueba.md`.
+La guía final exige **20–24 casos por equipo**, con **15–18 manuales y 5–6 automatizados**. Se diseñan **23 casos: 17 manuales (M01–M17) y 6 automatizados (A01–A06)**. La distribución propuesta entre los tres integrantes es por responsabilidad: Eduardo mantiene la aplicación base; Estefanía lidera los casos manuales y la documentación; Santiago lidera la automatización. El catálogo con datos, precondiciones, pasos, resultados y fundamento matemático está en `../proyecto-modalab/tests/manual/casos-de-prueba.md`.
 
 | Riesgo | Condición | Casos que lo cubren |
 |---|---|---|
@@ -185,19 +189,19 @@ La guía final exige **20–24 casos por equipo**, con **15–18 manuales y 5–
 | RY-03 | CP-09 | M17 |
 | RY-04 | CP-08 | M02 |
 
-Trazabilidad directa e inversa: cada riesgo de la matriz conduce a condiciones y casos arriba; cada caso del catálogo incluye sus IDs de condición y riesgo. RP-01, RY-01 y RY-02 (exposición alta) tienen al menos un caso de mitigación explícito. Los casos A01–A05 se ejecutan con `npm test`/Playwright; A06 está implementado como script k6 local. Los casos manuales quedan **diseñados, pendientes de ejecución y registro de evidencia**.
+Trazabilidad directa e inversa: cada riesgo de la matriz conduce a condiciones y casos arriba; cada caso del catálogo incluye sus IDs de condición y riesgo. RP-01, RY-01 y RY-02 (exposición alta) tienen al menos un caso de mitigación explícito. A01–A04 se ejecutan con `npm test`, A05 con Playwright, A06 con k6 y el comando `npm run test:all` reúne todas las pruebas automatizadas. Los casos manuales M01–M17 requieren ejecución y registro de evidencia por separado.
 
 ### 5.4 Estado de validación técnica del prototipo
 
-En las validaciones locales, A01–A05 pasaron con las pruebas unitarias, de integración y E2E; las pruebas unitarias y de integración se volvieron a ejecutar para esta entrega y también pasaron. `npm run lint` y `npm run build` pasaron en la última validación completa. Ninguno de estos resultados sustituye la ejecución manual de M01–M17, cuyos resultados y evidencias siguen pendientes.
+En la validación local del 18/11/2026, A01–A04 pasaron (2 pruebas unitarias y 4 de integración); `npm run lint` y `npm run build` también pasaron. A05 consta como ejecutada anteriormente con Playwright. Ninguno de estos resultados sustituye la ejecución manual de M01–M17, cuyos resultados y evidencias siguen pendientes.
 
-Como prevalidación de concurrencia, se enviaron 50 solicitudes de inicio de sesión válidas concurrentes contra el prototipo local: 50/50 respuestas HTTP 200, promedio de 1.843 ms, p95 de 1.849 ms y máximo de 1.849 ms, en el equipo local de cuatro núcleos. Esta medición directa no equivale a ejecutar formalmente el script A06 con k6; esa corrida y su registro reproducible siguen pendientes.
+**Ejecución A06 con k6 (18/11/2026, posterior al periodo del proyecto):** se completaron 50 de 50 solicitudes y todas respondieron HTTP 200; `checks` fue 100% y `http_req_failed` 0%. Sin embargo, `http_req_duration` registró promedio de 4.61 s, p95 de 5.63 s y máximo de 5.73 s. El promedio excede el umbral configurado de menos de 2 s, por lo que A06 **no aprobó el criterio de rendimiento** aunque las solicitudes funcionaron. Se requiere optimización y retest; esta medición no se debe presentar como aprobada.
 
-El build y smoke test de Docker tuvieron una validación previa satisfactoria, pero no se pudo completar un build final de la versión actual porque Docker Engine devolvió un error interno HTTP 500. Se debe repetir el build y el smoke test de contenedor antes de considerar validada una entrega Docker.
+La validación de la entrega se realiza en el entorno local documentado en el README del prototipo: instalar dependencias, ejecutar pruebas y completar el build con Node.js/npm.
 
 ### 5.5 Requisitos de entorno y datos
 
-**Entorno AMB-01:** equipo de desarrollo, Docker Compose, Node.js 22, Next.js, SQLite aislada y Chromium con Playwright. La carga se ejecuta solamente contra `localhost` del prototipo. Se registra sistema operativo, CPU, memoria, ID de commit/release y configuración usada. No se conecta a producción. La publicación del repositorio/release en GitHub queda pendiente de que el equipo indique un destino remoto.
+**Entorno AMB-01:** equipo de desarrollo, Node.js 22.18 o superior, npm, Next.js, SQLite aislada y Chromium con Playwright. k6 se requiere solo para la prueba de carga A06. La carga se ejecuta solamente contra `localhost` del prototipo. Se registra sistema operativo, CPU, memoria, ID de commit/release y configuración usada. No se conecta a producción. El repositorio está en GitHub; la publicación de un release sigue pendiente.
 
 **Datos DAT-01:** cuentas sintéticas Administrador, Vendedor e Inactiva; contraseñas ficticias; estados iniciales documentados. Antes de TC-01 y TC-05 se reinicia el contador de fallos y se limpia la sesión; al terminar se eliminan sesiones y resultados temporales. No se almacenan contraseñas en texto claro ni se introducen datos reales.
 
@@ -211,14 +215,15 @@ El build y smoke test de Docker tuvieron una validación previa satisfactoria, p
 
 | ID WBS | Actividad | Esfuerzo | Dependencia | Resultado |
 |---|---|---:|---|---|
-| 1.0 | Preparar entorno y datos sintéticos | 12 h | — | AMB-01 y DAT-01 repetibles |
-| 2.0 | Diseño documental de los 23 casos | 24 h | 1.0 | Trazabilidad, casos y procedimientos |
-| 3.0 | Programar scripts automatizados (A01–A06) | 30 h | 2.0 | Unitarias, servicio, E2E y carga local |
-| 4.0 | Ejecutar casos manuales y reportar defectos | 15 h | 2.0 | Evidencia M01–M17 y defectos |
-| 5.0 | Retest, revisión de trazabilidad y release de cierre | 6 h | 3.0 y 4.0 | Informe de cierre y evidencia consolidada |
+| 1.0 | Revisar el proyecto propio de inicio de sesión existente, preparar entorno y datos | 8 h | — | AMB-01 y DAT-01 repetibles |
+| 2.0 | Revisar talleres, alcance, riesgos y condiciones de prueba | 10 h | 1.0 | Matriz de riesgos y CP-01–CP-09 |
+| 3.0 | Diseñar los 23 casos manuales y automatizados | 12 h | 2.0 | Trazabilidad, datos, pasos y resultados esperados |
+| 4.0 | Implementar y preparar automatización A01–A06 | 34 h | 3.0 | Unitarias, integración, E2E y carga local |
+| 5.0 | Ejecutar casos manuales y registrar hallazgos | 15 h | 3.0 | Evidencia M01–M17 y defectos |
+| 6.0 | Retest, regresión y consolidación del informe | 8 h | 4.0 y 5.0 | Informe de cierre y evidencia consolidada |
 | **Total** |  | **87 h** |  |  |
 
-La estimación anterior del equipo era 72 horas. Se actualiza a 87 horas para incluir el volumen obligatorio de 23 casos, la automatización diferenciada y la evidencia manual/de cierre de la guía final. La estimación respeta las dependencias y el ciclo de tres semanas. Con cuatro integrantes confirmados representa **21,75 horas por persona en total** (aprox. **7,25 horas semanales por persona**); la capacidad no se considera validada hasta asignar el cuarto integrante. Esfuerzo-persona y duración calendario no son intercambiables.
+La estimación de **87 horas-persona** es una propuesta para las actividades de prueba, no incluye volver a desarrollar el prototipo de inicio de sesión ya existente. Entre tres integrantes equivale a un promedio de **29 horas-persona por integrante** durante el periodo; el reparto real puede variar según la responsabilidad. Esfuerzo-persona y duración calendario no son intercambiables.
 
 ## 7. Personal
 
@@ -227,21 +232,35 @@ La estimación anterior del equipo era 72 horas. Se actualiza a 87 horas para in
 | Coordinación de pruebas | Mantener alcance, prioridades, riesgos, trazabilidad e informe |
 | Diseño de pruebas | Especificar casos, datos, resultados y criterios de aceptación |
 | Ejecución QA | Ejecutar casos, conservar evidencia, registrar defectos y hacer retest |
-| Automatización | Programar, mantener y ejecutar los cinco/seis casos estables y scripts de carga local |
+| Automatización | Programar, mantener y ejecutar los seis casos automatizados y el script de carga local |
 | Desarrollo | Entregar versión identificada, corregir defectos y describir cambios |
 | Docente / revisor | Evaluar el cumplimiento académico y aprobar o solicitar ajustes |
 
-Distribución propuesta: Eduardo — Test Manager; Estefanía — analista de pruebas; Santiago — automatización/ejecución; integrante 4 por confirmar — analista/ejecutor manual. La cuarta asignación y el reparto de 5–6 casos por persona deben validarse. Las pruebas de autorización se revisarán por una persona distinta de quien implementó la ruta cuando la disponibilidad lo permita.
+Distribución propuesta para la copia nueva:
+
+- **Eduardo Deossa:** `src/`, `public/` y configuración de la aplicación.
+- **Estefanía Montoya:** `tests/manual/casos-de-prueba.md` y los documentos de `Solucion/`.
+- **Santiago Castaño:** pruebas automatizadas A01–A06, `scripts/`, `playwright.config.ts`, comandos de prueba y `README.md`.
+
+La distribución corresponde a la copia nueva del proyecto y no modifica el commit existente `2f3b054`. Ese commit conserva la aplicación y las pruebas en un solo cambio. Los nombres, mensajes y archivos de la secuencia propuesta están en `Guia_Colaboracion_Git.md`; se registrarán los hashes cuando se creen los commits.
 
 ## 8. Cronograma
 
-Plan relativo de tres semanas; las fechas calendario deben confirmarse con el docente.
+El periodo reportado por el equipo fue del **09/11/2026 al 17/11/2026**. La siguiente distribución reconstruye las actividades de prueba y sus estimaciones dentro de esas fechas; los esfuerzos por actividad y responsables son una propuesta y deben contrastarse con la bitácora real. El 14 y 15 de noviembre fueron fin de semana y no se asigna esfuerzo.
 
-| Semana | Actividades | Hito / salida |
+| Fecha | Actividades y responsables propuestos | Esfuerzo / salida prevista |
 |---|---|---|
-| 1 | Cerrar alcance y reglas; revisar riesgos; preparar entorno y datos; smoke tests | H1: versión y AMB-01 identificados; casos P1 listos |
-| 2 | Ejecutar TC-01 a TC-05; concurrencia local; registrar y priorizar defectos | H2: ciclo inicial y evidencia P1/P2 |
-| 3 | Retest, regresión, M17, métricas y consolidación de documentos | H3: criterios de salida evaluados e informe de cierre en Markdown y Word; publicación del release pendiente de repositorio remoto |
+| 09/11/2026 | Revisar el prototipo propio existente, identificar versión y preparar entorno/datos. Responsables: Eduardo y Estefanía. | 8 h — AMB-01, DAT-01 y alcance inicial |
+| 10/11/2026 | Revisar talleres, acordar alcance y reglas, analizar riesgos y derivar condiciones. Responsables: Eduardo y Estefanía. | 10 h — riesgos priorizados y CP-01–CP-09 |
+| 11/11/2026 | Diseñar los 17 casos manuales, datos, pasos, resultados y trazabilidad. Responsable: Estefanía. | 12 h — catálogo manual |
+| 12/11/2026 | Preparar y ejecutar pruebas unitarias e integración A01–A04. Responsable: Santiago. | 18 h — resultados técnicos y defectos |
+| 13/11/2026 | Preparar E2E A05 y carga A06; ejecutar el ciclo automatizado inicial. Responsables: Santiago y Eduardo. | 16 h — evidencia y mediciones |
+| 14–15/11/2026 | Fin de semana; sin actividades planificadas. | 0 h |
+| 16/11/2026 | Ejecutar casos manuales priorizados y registrar resultados/evidencia. Responsables: Estefanía y Santiago. | 15 h — estado M01–M17 y defectos |
+| 17/11/2026 | Retest, regresión, revisar trazabilidad y cerrar informe. Responsables: los tres integrantes. | 8 h — cierre y entregables |
+| **Total estimado** |  | **87 h** |
+
+La ejecución manual se mantiene pendiente cuando no exista evidencia registrada. La medición A06 informada el 18/11/2026 se realizó después del periodo de trabajo y se registra como seguimiento, no como una actividad concluida dentro del cronograma.
 
 ## Anexo A. Registro mínimo de defectos
 

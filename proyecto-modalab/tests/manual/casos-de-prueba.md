@@ -11,8 +11,8 @@
 
 - **Prioridad / trazabilidad:** P1 · RY-01 / CP-07.
 - **Técnica y fundamento:** checklist de configuración para confirmar las precondiciones del ensayo antes de ejecutar casos de producto.
-- **Precondiciones/datos:** Docker Compose instalado; copia de `.env.example` con contraseñas sintéticas; sin datos de tienda.
-- **Pasos:** 1) Iniciar el prototipo con Docker. 2) Verificar que la página local responde y la API de sesión sin cookie responde 401. 3) Registrar Node, Docker, sistema operativo, versión/commit, archivo de entorno (sin secretos) y estado de SQLite. 4) Confirmar que el host es localhost.
+- **Precondiciones/datos:** Node.js 22.18 o superior, npm y copia de `.env.example` configurada con contraseñas sintéticas; sin datos de tienda.
+- **Pasos:** 1) Iniciar el prototipo con `npm run dev`. 2) Verificar que la página local responde y la API de sesión sin cookie responde 401. 3) Registrar versiones de Node y npm, sistema operativo, versión/commit, archivo de entorno (sin secretos) y estado de SQLite. 4) Confirmar que el host es localhost.
 - **Resultado esperado:** servicio disponible, base aislada, datos semilla sintéticos, sin conexión externa. Si cualquiera falla, suspender y no ejecutar casos.
 - **Evidencia/estado:** checklist y salida de versiones; pendiente de ejecución manual.
 

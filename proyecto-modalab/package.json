@@ -5,13 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node .next/standalone/server.js",
+    "start": "next start",
     "lint": "eslint",
     "test:unit": "tsx --test tests/unit/auth-policy.test.ts",
     "test:integration": "tsx --test tests/integration/auth-service.test.ts",
     "test": "npm run test:unit && npm run test:integration",
     "test:e2e": "playwright test",
-    "test:e2e:prepare": "tsx scripts/prepare-e2e.ts"
+    "test:e2e:prepare": "tsx scripts/prepare-e2e.ts",
+    "test:load": "k6 run tests/load/login-concurrency.k6.js",
+    "test:all": "tsx scripts/test-all.ts"
   },
   "dependencies": {
     "next": "16.4.6",
